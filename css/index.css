@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+#Found{
+  display: none;
+}
+.graphic {
+  height: auto;
+  margin: 0 auto;
+  max-width: 300px;
+  width: 100%;
+}
+
+#Found .content {
+  margin: 0 auto;
+  padding: 10px;
+  width: 300px;
+}
+
+#NotFound .content {
+  margin: 0 auto;
+  padding: 50px;
+  width: 300px;
+}
+
+.content h1 {
+  font-size: 25px;
+  margin: 30px 0 15px;
+  text-align: center;
+}
+
+.content p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+.content span {
+  display: block;
+  font-size: 10px;
+  margin-top: 15px;
+  text-align: center;
+}

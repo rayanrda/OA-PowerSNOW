@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "OA PowerSNOW",
+  "description": "LUSA extension to boost SNOW features",
+  "version": "1.0.0",
+  "icons": {
+    "128": "icons/icon.png"
+  },
+  "action": {
+    "default_icon": {
+      "32": "icons/icon.png"
+    },
+    "default_popup": "index.html",
+    "default_title": "PowerSNOW"
+  },
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.service-now.com/*"
+      ],
+      "exclude_matches":["https://*/myservices*"],
+      "all_frames": true,
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "world": "MAIN",
+      "matches": [
+        "https://*.com/rm_story.do*",
+        "https://*.service-now.com/dmn_demand.do*",
+        "https://*.com/rm_enhancement.do*"
+      ],
+      "all_frames": true,
+      "js": [
+        "iframe.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://*.service-now.com/myservices*"
+      ],
+      "all_frames": true,
+      "js": [
+        "myservices.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+        "scripting",
+        "active_tabs"
+  ]
+}
