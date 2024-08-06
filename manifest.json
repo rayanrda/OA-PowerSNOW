@@ -38,7 +38,7 @@
       ],
       "all_frames": true,
       "js": [
-        "iframe.js"
+        "ticket.js"
       ],
       "run_at": "document_end"
     },
