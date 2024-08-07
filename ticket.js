@@ -30,3 +30,29 @@ document.addEventListener('keydown', e => {
 
 
 
+
+//Check if input have been changed 
+var change_made = false;
+document.querySelectorAll('input, textarea, select').forEach(element => {
+    element.addEventListener('change', (event) => {
+        change_made = true;
+    });
+});
+
+//Remove actual onclick behaviour for "Asses" button 
+document.querySelector("#u_submit_action").onclick = () => { };
+//Add click listener to save before doing assesing
+document.querySelector("#u_submit_action").addEventListener('click', (event) => {
+    if(change_made){
+        let confirm_result = confirm("It looks like you’ve made some changes. Are you sure you want to continue without saving?")
+        if(confirm_result == false){
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        }
+    }
+    var u_submit_action=window.u_submit_action;
+    processSubmit();
+    return false;
+
+});
