@@ -1,6 +1,5 @@
 'use strict';
-//THIS FILE WILL RUN ON BACKEND TO GET TITLE AND NUMBER FROM THE TICKET TO SEND IT TO THE POPUP
-
+//Get the content from the page and send it to the extension popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if ((request.from === 'service-worker') && (request.action === 'getPageDetails')) {
 

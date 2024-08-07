@@ -1,5 +1,4 @@
-//THIS SCRIPT WILL POPULATE THE EXTENSION POPUP WITH THE CONTENT SENDED BY "content.js"
-
+//This script will modify the popup content based on the information sended in "content.js"
   document.addEventListener('DOMContentLoaded', () => {
     chrome.runtime.sendMessage({ action: "getPageDetails", from:"popup"}, response => {
       if (!chrome.runtime.lastError && response !== null ) {

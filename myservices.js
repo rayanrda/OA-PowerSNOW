@@ -1,4 +1,5 @@
-//THIS FILE WILL WORK ONLY ON MYSERVICE IN ORDER TO REPLACE ACTUAL TITLE WITH LINK TO THE ACTUAL TICKET 
+'use strict';
+//This script will only run on /myservices
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if ((request.from === 'service-worker') && (request.action === 'getPageDetails')) {
@@ -13,6 +14,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 
 });
+
+//Add mutation observer to detect when a ticket is being displayed and add replace the actual title with href to the actual ticket in the backend 
 
 var observeDOMChange = (obj, callback) => {
     var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;

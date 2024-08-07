@@ -1,4 +1,5 @@
-
+'use strict';
+//Service worked used to create the communication between the popup and the page 
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.from === 'popup' && request.action === 'getPageDetails') {
       chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
